@@ -1,0 +1,104 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+struct items {
+  char nom[50];
+  int prix;
+  char description[100];
+  int quantite;
+};
+
+typedef struct items items;
+
+
+  items arme = {"Lance Halone", 1000, "Cette lance aurai appartenue à la Sainte conquérante Halone", 5};
+  items torse = {"Cuirasse de pisteur Edenique", 585, "Après la mort du célèbre chevalier d'Ishgard, sa cuirasse aurai été le seul vestige de son existence", 5};
+  items tête  = {"Diadème type Pleine Ombre", 1500, "Artefact trouvé dans les ruines du temple d'Amdapor, une aura mystérieuse s'en dégage", 5};
+  items pantalon = {"Braies du Clair Obscur", 500, "exemplaire d'uniforme de l'élite 23", 5};
+  items pieds  = {"Sabatons du grand jour", 485, "Pratique pour danser lors d'une soirée arrosée en taverne, ou bien pour détendre vos pieds après une dure journée de labeur", 5};
+  items accessoire = {"Bague du lien éternel", 185, "Cet anneau unique peut vous permettre de vous téléporter auprès de votre allié. CD: 500s.", 5};
+
+
+int main()
+{
+
+ int choix;
+ int orJoueur = 6000;
+
+ items shop [5];
+ shop[0] = arme;
+ shop[1] = torse;
+ shop[2] = tête;
+ shop[3] = pantalon;
+ shop[4] = pieds;
+ shop[5] = accessoire;
+
+
+while (orJoueur > 0){
+
+
+printf("Bienvenue dans mon humble bazarre, voyageur, j'ai de nouveaux arrivages, souhaiteriez-vous y jeter un coup d'oeil? \n [1] avec plaisir \n [2] Je recherche un hôtel de vente ! Pouvez-vous m'aider? \n [3] Je n'ai pas le temps");
+scanf("%d", &choix);
+
+if (choix == 1){
+	printf("Mes confrères ont trouvés de nouveaux attirails, et un objet mystique à été retrouvé dans notre ancien temple après une rude bataille, venez voir! \n");
+  printf([0], arme.nom, arme.prix, arme.description);
+  printf([1], torse.nom, torse.prix, torse.description);
+  printf([2], tête.nom, tête.prix, tête.description);
+  printf([3], pantalon.nom, pantalon.prix, pantalon.description);
+  printf([4], pieds.nom, pieds.prix, pieds.description);
+  printf([5], accessoire.nom, accessoire.prix, accessoire.description);
+
+    scanf(&shop);
+
+    if(shop == 0){
+      printf("Tenez, n'oubliez pas de l'entretenir comme il se doit, ce n'est pas une arme lambra après tout ! \n");
+      orJoueur = orJoueur - arme.prix;
+    }
+
+    if(shop == 1){
+      printf("Vous devriez l'essayer avant... \n");
+      orJoueur = orJoueur - torse.prix;
+    }
+
+    if(shop == 2){
+      printf("Vous avez désormais un véritable trésor entre vos mains... Ou devrais-je dire, sur votre tête ! \n");
+      orJoueur = orJoueur - tête.prix;
+    }
+
+    if(shop == 3){
+      printf("Hum.. Besoin d'aide pour l'enfiler? \n");
+      orJoueur = orJoueur - pantalon.prix
+    }
+
+    if (shop == 4){
+      printf("Parfait, c'est justement à votre taille! \n");
+      orJoueur = orJoueur - pieds.prix
+    }
+
+    if (shop == 5){
+      printf("Vous aimez la couleur? \n");
+      orJoueur = orJoueur - accessoire.prix
+    }
+}
+    
+     
+
+if (choix == 2){
+	printf("Je suis votre homme ! Confiez-moi ce dont vous devez vous débarrasser. \n");
+}
+
+if (choix == 3){
+	printf("Repassez plus tard! \n");
+}
+
+
+if (orJoueur <= 0){
+  printf("Je suis vraiment navrée, on dirait que vous n'avez pas la somme nécessaire... \n");
+}
+
+  return 0;
+
+ }
